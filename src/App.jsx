@@ -78,10 +78,10 @@ function App() {
   }, []);
 
   return (
-    <div className={`container vh-100 d-flex flex-column align-items-center bg-dark text-light ${isCorrectMove ? `correct-move` : ``} ${isIncorrectMove ? `incorrect-move` : ``}`}>
+    <div className={`container vh-100 d-flex flex-column align-items-center bg-dark text-light`}>
 
       {/* HAND AND DEALER CARDS */}
-      <div className="container d-flex flex-row align-items-center">
+      <div className={`container d-flex flex-row align-items-center ${isCorrectMove ? `correct-move` : ``} ${isIncorrectMove ? `incorrect-move` : ``}`}>
         <div className="container">
           <Hand hand={dealerHand} title={`Dealer's Hand [${dealerCount}]`} />
           <Hand hand={playerHand} title={`Player's Hand [${playerCount}]`} />
@@ -98,37 +98,37 @@ function App() {
       </div>
       
       {/*CONTAINER FOR ALL BUTTONS*/}
-      <div className="container">
+      <div className="button-wrapper">
 
         {/* NEW DEAL AND SURRENDER BUTTONS */}
-        <div className="row mb-3 justify-content-center h-50">
-          <div className="col-6">
+        <div className="row mb-3 justify-content-center h-100">
+          <div className="col-3">
             <button className="btn btn-success btn-md w-100 h-100 fs-1" onClick={() => {
               setScore(0); 
               startGame();
             }}>New Deal</button>
           </div>
-          <div className="col-6">
+          <div className="col-3">
             <button className="btn btn-danger btn-md w-100 h-100 fs-1" onClick={() => handlePlayerMove("Surrender")}>Surrender</button>
           </div>
         </div>
 
         {/* HIT AND STAND BUTTONS */}
         <div className="row mb-3 justify-content-center h-50">
-          <div className="col-6">
+          <div className="col-3">
             <button className="btn btn-primary btn-md w-100 h-100 fs-1" onClick={() => handlePlayerMove("Hit")}>Hit</button>
           </div>
-          <div className="col-6">
+          <div className="col-3">
             <button className="btn btn-primary btn-md w-100 h-100 fs-1" onClick={() => handlePlayerMove("Stand")}>Stand</button>
           </div>
         </div>
 
         {/* DOUBLE AND SPLIT BUTTONS */}
         <div className="row justify-content-center h-50">
-          <div className="col-6">
+          <div className="col-3">
             <button className="btn btn-primary btn-md w-100 h-100 fs-1" onClick={() => handlePlayerMove("Double")}>Double</button>
           </div>
-          <div className="col-6">
+          <div className="col-3">
             <button className="btn btn-primary btn-md w-100 h-100 fs-1" onClick={() => handlePlayerMove("Split")}>Split</button>
           </div>
         </div>

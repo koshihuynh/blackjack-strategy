@@ -43,6 +43,15 @@
   margin-top: 2rem;
 }
 
+.button-wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(33, 37, 41, 0.9); /* Dark transparent background */
+  padding: 10px;
+}
+
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
   #root {

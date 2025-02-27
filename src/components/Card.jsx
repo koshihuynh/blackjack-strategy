@@ -13,7 +13,7 @@ export class Card {
 // Card Component for Display
 export default function CardComponent({ card }) {
   return (
-    <div className="card text-center border-dark " style={{ width: "10em", height: "15em", position: "relative" }}>
+    <div className="card text-center border-dark " style={{ width: "8em", height: "12em", position: "relative" }}>
       {
         card.revealed ? (
         <div className="d-flex flex-column justify-content-center align-items-center h-100">
